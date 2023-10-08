@@ -1,0 +1,17 @@
+name: "shellcancer"
+author: orsobruno96
+
+description: This is really a simple challenge. Dummy jail, gib me a shellcode.
+port: 10002
+host: "challs.{{ CTFD_URL }}"
+connection_info: "nc {{ host }} {{ port }}"
+healthcheck: "writeup/solve.py --hostname={{ host }} --port={{ port }}"
+
+topics:
+- pwn
+- shellcode
+- cancer
+
+files:
+- attachments/server.py
+- attachments/shellcancer

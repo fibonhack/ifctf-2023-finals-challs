@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  pwn_rinux:
+    container_name: pwn_shellcancer
+    build:
+      context: .
+    ports:
+    - '10002:5000/tcp'
+    privileged: true

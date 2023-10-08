@@ -1,0 +1,28 @@
+author: orsobruno96
+category: pwn
+connection_info: nc challs.ifctf.fibonhack.it 10002
+description: 'This is really a simple challenge. Dummy jail, gib me a shellcode.
+
+
+  Author: @orsobruno96'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- attachments/../src/server.py
+- attachments/../src/shellcancer
+flags:
+- ifctf{sysc4lls_w1th0ut_wr4app3r_1n_glibc_4r3_fr33_r34l_3st4te_308183cd7e}
+healthcheck: writeup/solve.py --hostname=challs.ifctf.fibonhack.it --port=10002
+host: challs.ifctf.fibonhack.it
+image: null
+name: shellcancer
+port: 10002
+state: hidden
+topics:
+- pwn
+- shellcode
+- cancer
+type: dynamic
+value: 100
