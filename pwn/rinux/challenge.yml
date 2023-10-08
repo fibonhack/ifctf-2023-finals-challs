@@ -1,0 +1,27 @@
+author: orsobruno96
+category: pwn
+connection_info: nc challs.ifctf.fibonhack.it 10001
+description: 'It is 2023 and people still write bugged kernels for x86?
+
+
+  Author: @orsobruno96'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- dist/rinux.zip
+flags:
+- ifctf{1s_th1s_pwn_0r_c0d1ng?_87ec7ee164a2f486f987}
+healthcheck: solve/pwn_rinux.py --hostname=challs.ifctf.fibonhack.it --port=10001
+host: challs.ifctf.fibonhack.it
+image: null
+name: rinux
+port: 10001
+state: hidden
+topics:
+- pwn
+- kernel
+- misery
+type: dynamic
+value: 100

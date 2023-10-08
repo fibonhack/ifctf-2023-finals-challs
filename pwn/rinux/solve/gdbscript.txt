@@ -1,0 +1,19 @@
+target remote localhost:1234
+
+
+# set architecture i8086
+# add-symbol-file tmp/rinux/target/stage0/release/bootloader
+# break multiboot_entry
+# break enable_pagination
+
+
+file tmp/rinux/src/target/x86_64-unknown-none/release/kernel
+add-symbol-file tmp/rinux/src/target/x86_64-unknown-none/release/kernel -o 0xffffffff81000000
+
+# break kernel::_start
+# break restore_state_iretq
+# break entry_syscall
+# break exit_syscall
+break *0x401000
+
+continue

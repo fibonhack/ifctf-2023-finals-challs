@@ -1,0 +1,16 @@
+name: "rinux"
+author: orsobruno96
+
+description: It is 2023 and people still write bugged kernels for x86?
+port: 10001
+host: "challs.{{ CTFD_URL }}"
+connection_info: "nc {{ host }} {{ port }}"
+healthcheck: "solve/pwn_rinux.py --hostname={{ host }} --port={{ port }}"
+
+topics:
+- pwn
+- kernel
+- misery
+
+files:
+- dist/rinux.zip
