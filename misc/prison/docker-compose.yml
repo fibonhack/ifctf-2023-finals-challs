@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  misc_prison:
+    build:
+      context: .
+      args:
+        - FLAG=ifctf{if_you_managed_to_do_it_without_using_the_@_i'll_buy_you_a_beer:)}
+    container_name: misc_prison
+    ports:
+      - "10010:5000"
+    restart: unless-stopped
+    privileged: true
