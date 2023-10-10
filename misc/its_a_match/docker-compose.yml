@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  misc_its_a_match:
+    container_name: misc_its_a_match
+    build:
+      context: .
+    ports:
+    - '10011:5000/tcp'
+    privileged: true
