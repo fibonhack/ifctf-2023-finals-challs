@@ -29,9 +29,11 @@ In this challenge the server sends the client a program to be executed by the cl
 This program contains encrypted values of four parts of the flag, and encrypted values of four indices.
 One of the index is the encrypted value of $1$, while the other are encrypted negative values.
 The program calculates homomorphically
+
 $$
 G(\text{idx}_0, \text{flag}_0) + G(\text{idx}_1, \text{flag}_1) + G(\text{idx}_2, \text{flag}_2) + G(\text{idx}_3, \text{flag}_3)
 $$
+
 which, by the way $G$ is defined, results in the re-encrypted value of $\text{flag}_i$ at the index where $\text{idx}_i$ is $1$.
 So this is a way to secretly select one piece of information without revealing the information nor the selected index, which is in a way an [oblivious transfer](https://en.wikipedia.org/wiki/Oblivious_transfer) implementation.
 
