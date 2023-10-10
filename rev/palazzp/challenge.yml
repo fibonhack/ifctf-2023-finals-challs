@@ -1,0 +1,13 @@
+name: "palazzp"
+author: f1x3r
+
+description: A friend dropped me this binary and it's a discord bot, can you help me find the flag?
+
+flags:
+- ifctf{fml_why_4m_1_h3r3_47_10_4m_wr171n6_7h15_r3v_plz_53nd_h3lp}
+
+topics:
+- rev
+
+files:
+- dist/palazzp
