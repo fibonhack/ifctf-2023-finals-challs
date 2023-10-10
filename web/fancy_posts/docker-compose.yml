@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  fancy_posts:
+    build: ./src
+    container_name: fancy_posts
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      JWT_SECRET: ${JWT_SECRET}
+      FLAG: ${FLAG}
+    ports:
+      - 3000:3000
+    restart: unless-stopped

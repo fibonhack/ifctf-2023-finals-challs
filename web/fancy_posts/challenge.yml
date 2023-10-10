@@ -1,0 +1,26 @@
+author: beryx, b0n0b0
+category: web
+connection_info: http://web.ifctf.fibonhack.it:3010/
+description: 'The author of this challenge didnt'' provided me any description, so
+  I think you should figure it out by yourself
+
+
+  Author: @beryx, b0n0b0'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- dist/fancy_posts_dist.zip
+flags:
+- ifctf{https://www.sqlite.org/nulinstr.html#:~:text=This%20seems%20like%20a%20bug.%20But%20it%20is%20how%20SQLite%20works.}
+healthcheck: solve/exploit.py --url=http://web.ifctf.fibonhack.it:3010/
+host: web.ifctf.fibonhack.it
+image: null
+name: fancy_posts
+port: 3010
+state: hidden
+topics:
+- web
+type: dynamic
+value: 100

@@ -1,0 +1,14 @@
+name: "uncommon_proxy"
+author: drw0if
+
+description: Just a fancy way to firewall requests, blazingly fast ofc
+healthcheck: "solve/exploit.py --url=http://web.{{ CTFD_URL }}:{{ port }}/"
+port: 10030
+host: "web.{{ CTFD_URL }}"
+connection_info: "http://web.{{ CTFD_URL }}:{{ port }}/"
+
+topics:
+- web
+
+files:
+- dist/uncommon_proxy_dist.zip

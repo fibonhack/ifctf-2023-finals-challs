@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  db:
+    build: src/db/
+    container_name: "just_l33t_database"
+    privileged: false
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=just_l33t_db
+
+  backend:
+    build: src/backend/
+    depends_on:
+     - db
+    container_name: "just_l33t_backend"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=just_l33t_db
+      - DBHOST=db
+
+      - SECRET_KEY=3ddfad804d3b30574ee2466cc3faa1ca
+      - EN_HOST=en.just-l33t.fibonhack.it
+      - TO_HOST=to.just-l33t.fibonhack.it
+      - ADMIN_HOST=admin.just-l33t.fibonhack.it
+ 
+  admin:
+    build: src/admin/
+    depends_on:
+     - db
+    container_name: "just_l33t_admin"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=just_l33t_db
+      - DBHOST=db
+
+      - SECRET_KEY=d908cd1cf78ab08ddff695d12e1810d2
+      - FLAG=ifctf{i7_s_2_am_and_7his_cha113ng3_is_s7i11_no7_r3ady_i_7hink_i_m_gonna_kms}
+
+  nginx:
+    build: src/
+    depends_on:
+     - backend
+     - admin
+     - bot
+    container_name: "just_l33t_nginx"
+    volumes:
+      - ./src/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+
+  bot:
+    build: src/bot/
+    container_name: "just_l33t_bot"
+    restart: unless-stopped
+    environment:
+      - ADMIN_PASSWORD=c14135b2324174d80968bd85dda61a68

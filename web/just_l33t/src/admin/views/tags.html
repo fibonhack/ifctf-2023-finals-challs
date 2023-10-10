@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Color Selector</title>
+</head>
+<body>
+    <div class="color-selector-container container">
+        <h1>Choose Colors</h1>
+        <form method="POST" action="/tags">
+            <div class="form-group">
+                <label for="kebabColor">Kebab Color:</label>
+                <input type="color" id="kebabColor" name="kebab" value="<%= colors.kebab %>">
+            </div>
+            <div class="form-group">
+                <label for="pizzaColor">Pizza Color:</label>
+                <input type="color" id="pizzaColor" name="pizza" value="<%= colors.pizza %>">
+            </div>
+            <div class="form-group">
+                <label for="otherColor">Other Color:</label>
+                <input type="color" id="otherColor" name="other" value="<%= colors.other %>">
+            </div>
+            <button type="submit">Save Colors</button>
+        </form>
+    </div>
+</body>
+</html>

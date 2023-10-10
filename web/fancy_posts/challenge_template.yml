@@ -1,0 +1,14 @@
+name: "fancy_posts"
+author: beryx, b0n0b0
+
+description: The author of this challenge didnt' provided me any description, so I think you should figure it out by yourself
+healthcheck: "solve/exploit.py --url=http://web.{{ CTFD_URL }}:{{ port }}"
+port: 3010
+host: "web.{{ CTFD_URL }}"
+connection_info: "http://web.{{ CTFD_URL }}:{{ port }}/"
+
+topics:
+- web
+
+files:
+- dist/fancy_posts_dist.zip

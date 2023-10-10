@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  backend:
+    build: src/backend/
+    container_name : "uncommon_proxy_backend"
+    environment:
+      - FLAG=ifctf{pars3r_diff3r3n7ia1_is_probab1y_my_favori73_bug_c1ass_af73r_rac3_condi7ion}
+
+  firewall:
+    build: src/firewall/
+    container_name: "uncommon_proxy_firewall"
+    environment:
+      - BACKEND_HOST=backend
+      - BACKEND_PORT=8081
+      - ADMIN_SECRET=797e15c03e2750a604ff86dbd3012f93
+    ports:
+      - 10030:5000

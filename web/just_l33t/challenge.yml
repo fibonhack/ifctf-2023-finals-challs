@@ -1,0 +1,26 @@
+author: drw0if, b0n0b0
+category: web
+connection_info: to.just-l33t.fibonhack.it en.just-l33t.fibonhack.it admin.just-l33t.fibonhack.it
+  bot.just-l33t.fibonhack.it
+description: 'We want to export some famous Pisean dishes to the world, so go check
+  out our just eat clone, now with so much l33t more!
+
+
+  Author: @drw0if, b0n0b0'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- dist/just_l33t-dist.zip
+flags:
+- ifctf{i7_s_2_am_and_7his_cha113ng3_is_s7i11_no7_r3ady_i_7hink_i_m_gonna_kms}
+host: challs.ifctf.fibonhack.it
+image: null
+name: just_l33t
+port: 80
+state: hidden
+topics:
+- web
+type: dynamic
+value: 100

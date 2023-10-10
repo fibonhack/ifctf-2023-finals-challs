@@ -1,0 +1,26 @@
+author: drw0if
+category: rev
+description: 'Go check out the new weather station in the hall of the building, it
+  is fully featured with a backdoor I think... (To craft your solve you can both decide
+  to flash a custom firmware on the transmitter, or to use the provided HackRF)
+
+
+  Author: @drw0if'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- dist/station.ino
+flags:
+- ifctf{_un_chi1o_di_schiaccia7a_}
+host: null
+image: null
+name: backdoor
+state: hidden
+topics:
+- rev
+- radio
+- hardware
+type: dynamic
+value: 100

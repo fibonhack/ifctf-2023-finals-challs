@@ -1,0 +1,5 @@
+<% for(let k of Object.keys(colors)) { %>
+.<%= k %> {
+    color: <%- colors[k] %>;
+}
+<% } %>

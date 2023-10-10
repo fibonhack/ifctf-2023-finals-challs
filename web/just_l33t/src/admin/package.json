@@ -1,0 +1,20 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "admin dashboard for just_l33t",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "drw0if",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.1",
+    "sha256": "^0.2.0"
+  }
+}

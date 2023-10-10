@@ -1,0 +1,13 @@
+**/.DS_Store
+**/.env*
+!.env.example
+!/frontend/.env
+**/node_modules
+.vscode
+*.db
+**/*-debug.log*
+**/*-error.log*
+/frontend/.pnp
+/frontend/*.pnp.js
+/frontend/coverage
+/frontend/build

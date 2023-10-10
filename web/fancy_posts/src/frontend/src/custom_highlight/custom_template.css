@@ -1,0 +1,10 @@
+/* CustomLanguageEditor.css */
+.custom-language-editor {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.custom-language-editor .token.variable {
+  color: #07b9b0; /* Customize the color for your custom language tokens */
+  font-weight: bold;
+}

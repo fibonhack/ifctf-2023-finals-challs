@@ -1,0 +1,1 @@
+ifctf{https://www.sqlite.org/nulinstr.html#:~:text=This%20seems%20like%20a%20bug.%20But%20it%20is%20how%20SQLite%20works.}

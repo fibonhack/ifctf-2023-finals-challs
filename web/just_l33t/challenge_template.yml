@@ -1,0 +1,14 @@
+name: "just_l33t"
+author: drw0if, b0n0b0
+
+description: We want to export some famous Pisean dishes to the world, so go check out our just eat clone, now with so much l33t more!
+# healthcheck: "solve/exploit.py --url=http://challs.{{ CTFD_URL }}/"
+port: 80
+host: "challs.{{ CTFD_URL }}"
+connection_info: "to.just-l33t.fibonhack.it en.just-l33t.fibonhack.it admin.just-l33t.fibonhack.it bot.just-l33t.fibonhack.it"
+
+topics:
+- web
+
+files:
+- dist/just_l33t-dist.zip

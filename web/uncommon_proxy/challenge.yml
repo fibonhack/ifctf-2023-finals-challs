@@ -1,0 +1,25 @@
+author: drw0if
+category: web
+connection_info: http://web.ifctf.fibonhack.it:10030/
+description: 'Just a fancy way to firewall requests, blazingly fast ofc
+
+
+  Author: @drw0if'
+extra:
+  decay: 100
+  initial: 500
+  minimum: 50
+files:
+- dist/uncommon_proxy_dist.zip
+flags:
+- ifctf{pars3r_diff3r3n7ia1_is_probab1y_my_favori73_bug_c1ass_af73r_rac3_condi7ion}
+healthcheck: solve/exploit.py --url=http://web.ifctf.fibonhack.it:10030/
+host: web.ifctf.fibonhack.it
+image: null
+name: uncommon_proxy
+port: 10030
+state: hidden
+topics:
+- web
+type: dynamic
+value: 100

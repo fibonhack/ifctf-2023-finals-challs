@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/tags.css">
+    <title>Order Details</title>
+</head>
+<body>
+    <div class="order-details-container container">
+        <input type="password" id="leak_me" value="<%= FLAG %>">
+        <h1>Order Details</h1>
+        <p>Order ID: <%= order.id %></p>
+        <p>Tip: <%= order.tip %></p>
+        <p>Username: <%= order.username %></p>
+
+        <h2>Items in the Order</h2>
+        <table class="item-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% order.items.forEach(item => { %>
+                    <tr class="<%= item.tag %>">
+                        <td><%= item.name %></td>
+                        <td>$<%= item.price %></td>
+                        <td><%= item.quantity %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        
+        <br>
+        <br>
+        <a href="/orders">Back to orders</a>
+        <br>
+        <a href="/tags">Edit colors for various tags</a>
+    </div>
+</body>
+</html>
