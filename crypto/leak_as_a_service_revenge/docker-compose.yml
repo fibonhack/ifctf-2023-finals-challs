@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  crypto_laas_revenge:
+    container_name: crypto_laas_revenge
+    build:
+      context: .
+    ports:
+    - '10022:5000/tcp'
+    privileged: true

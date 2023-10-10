@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  crypto_laas:
+    container_name: crypto_laas
+    build:
+      context: .
+    ports:
+    - '10021:5000/tcp'
+    privileged: true

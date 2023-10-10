@@ -1,0 +1,15 @@
+name: "Leak as a Service Revenge"
+author: gio-d3141
+
+description: This time it won't be so simple!
+port: 10022
+host: "challs.{{ CTFD_URL }}"
+connection_info: "nc {{ host }} {{ port }}"
+
+healthcheck: 'solve/healthcheck.py --hostname={{ host }} --port={{ port }}'
+
+topics:
+  - crypto
+
+files:
+  - src/server.py

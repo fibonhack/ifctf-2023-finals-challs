@@ -1,0 +1,1 @@
+FLAG = 'ifctf{brut3f0rce_40_b1ts!!??!_@lorenz_w0uld_4pprov3!}'

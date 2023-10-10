@@ -1,0 +1,99 @@
+; vim: set syntax=asm:  
+
+; jump unconditionally to location
+.def goto location
+    Z Z location
+.end
+
+; initially ip=0, so first thing to do is to jump to the entrypoint
+.call goto entrypoint
+
+; this is assumed to always contain ~0
+.label Z
+    ~0 ~0 0
+
+; this is assumed to always contain ~1
+.label one
+    ~1 ~0 0
+
+; general purpose variables, used for temporary storage
+.label R0
+    ~0 ~0 0
+.label R1
+    ~0 ~0 0
+.label R2
+    ~0 ~0 0
+.label R3
+    ~0 ~0 0
+.label R4
+    ~0 ~0 0
+
+; jump unconditionally to ip -1, thus halt the computation
+.def halt
+    Z Z -1
+.end
+
+; the result is stored in the first memory cell
+; so move the result there and halt
+.def return x
+    .call mov x 0
+    .call halt
+.end
+
+; y = x + y
+.def add x y
+    x Z ?+3
+    Z y ?+3
+    Z Z ?+3
+.end
+
+; y = x
+.def mov x y
+    y y ?+3
+    .call add x y
+.end
+
+; put a (compile time) random value into x
+.def rand x
+    Z Z ?+6
+    .random
+    .call mov ?-3 x
+.end
+
+
+; declare the inputs variables of the program
+.input flag0
+.input flag1
+.input flag2
+.input flag3
+
+.input idx0
+.input idx1
+.input idx2
+.input idx3
+
+.label accumulator
+    ~0 ~0 0
+
+.label entrypoint
+
+; accumulator = G(idx0, flag0) + G(idx1, flag1) + G(idx2, flag2) + G(idx3, flag3)
+; in the end, accumulator will contain the selected piece of the flag
+.call rand R4
+.call builtins.G idx0 flag0 R4
+
+.call rand R4
+.call builtins.G idx1 flag1 R4
+
+.call rand R4
+.call builtins.G idx2 flag2 R4
+
+.call rand R4
+.call builtins.G idx3 flag3 R4
+
+.call add flag0 accumulator
+.call add flag1 accumulator
+.call add flag2 accumulator
+.call add flag3 accumulator
+
+.call return accumulator

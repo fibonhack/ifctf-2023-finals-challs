@@ -1,0 +1,15 @@
+name: "dlogdlogdlog"
+author: marcog
+
+description: Solving dlogs is hard, in addition here you do not even get the full output!!?!
+port: 10022
+host: "challs.{{ CTFD_URL }}"
+connection_info: "nc {{ host }} {{ port }}"
+
+healthcheck: 'solve/healthcheck.py --hostname={{ host }} --port={{ port }}'
+
+topics:
+  - crypto
+
+files:
+  - src/server.py

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  crypto_cryptoleaq:
+    container_name: crypto_cryptoleaq
+    build:
+      context: .
+    ports:
+    - '10020:5000/tcp'
+    privileged: true
